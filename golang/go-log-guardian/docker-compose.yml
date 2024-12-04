@@ -1,0 +1,55 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres:latest
+    container_name: log-guardian-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - "${POSTGRES_EXTERNAL_PORT}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  mysql:
+    image: mysql:latest
+    container_name: log-guardian-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DBNAME}
+    ports:
+      - "${MYSQL_PORT}:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+
+  sqlite:
+    image: nouchka/sqlite3:latest
+    container_name: log-guardian-sqlite
+    restart: always
+    volumes:
+      - ./sqlite:/data
+    entrypoint: /bin/sh
+    command: >
+      -c "while true; do sleep 3600; done"
+
+  mongodb:
+    image: mongo:latest
+    container_name: log-guardian-mongodb
+    restart: always
+    environment:
+      MONGO_INITDB_DATABASE: ${MONGODB_DBNAME}
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+volumes:
+  postgres_data:
+  mysql_data:
+  mongodb_data:

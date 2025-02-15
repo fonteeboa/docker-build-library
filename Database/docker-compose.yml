@@ -1,0 +1,93 @@
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: pg_yoevtvkj
+      POSTGRES_PASSWORD: "+sM^[M6,'XeL~]!o"
+      POSTGRES_DB: mydb
+    ports:
+      - "5432:5432"
+    networks:
+      - db-network
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: Ik+)+&*z(C#F+ka[L]H`gtD[
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: my_ioogwjur
+      MYSQL_PASSWORD: Ik+)+&*z(C#F+ka[L]H`gtD[
+    ports:
+      - "3306:3306"
+    networks:
+      - db-network
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  mongodb:
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongo_jpwydgea
+      MONGO_INITDB_ROOT_PASSWORD: "EDCl64IGYnOA'I#%"
+    ports:
+      - "27017:27017"
+    networks:
+      - db-network
+    volumes:
+      - mongo-data:/data/db
+
+  cassandra:
+    image: cassandra:latest
+    environment:
+      CASSANDRA_USER: cass_zjoeoewg
+      CASSANDRA_PASSWORD: "1yDX@hP9*IA6C+dY4Pf:"
+    ports:
+      - "9042:9042"
+    networks:
+      - db-network
+    volumes:
+      - cassandra-data:/var/lib/cassandra
+
+  aurora:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: 7"c`wk#*wt4Hsjb-5lq4
+      MYSQL_DATABASE: aurora_db
+      MYSQL_USER: aur_ruturwcv
+      MYSQL_PASSWORD: 7"c`wk#*wt4Hsjb-5lq4
+    ports:
+      - "3307:3306"
+    networks:
+      - db-network
+    volumes:
+      - aurora-data:/var/lib/mysql
+
+  spanner-emulator:
+    image: gcr.io/cloud-spanner-emulator/emulator
+    environment:
+      SPANNER_USER: span_ceybphph
+      SPANNER_PASSWORD: ";:rJ<O'zaHh8D1)z9Pa&"
+    ports:
+      - "9010:9010"
+    networks:
+      - db-network
+
+  sqlite:
+    image: nouchka/sqlite3:latest
+    volumes:
+      - ./data:/data
+    networks:
+      - db-network
+
+networks:
+  db-network:
+    driver: bridge
+
+volumes:
+  postgres-data:
+  mysql-data:
+  mongo-data:
+  cassandra-data:
+  aurora-data:

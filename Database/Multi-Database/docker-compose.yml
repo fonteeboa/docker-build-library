@@ -2,7 +2,7 @@ services:
   postgres:
     image: postgres:latest
     environment:
-      POSTGRES_USER: pg_yoevtvkj
+      POSTGRES_USER: admin_yoevtvkj
       POSTGRES_PASSWORD: "+sM^[M6,'XeL~]!o"
       POSTGRES_DB: mydb
     ports:

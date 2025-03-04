@@ -1,0 +1,9 @@
+# Ensure specific folders are ignored
+Database/postgres-uuid-v7/.env.*
+Database/postgres-uuid-v7/.env
+cobol/cobol-temperature-converter/.env
+cobol/cobol-temperature-converter/.env.*
+Database/Multi-Database/.env
+Database/Multi-Database/.env.*
+golang/go-log-guardian/.env
+golang/go-log-guardian/.env.*

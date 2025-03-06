@@ -42,16 +42,16 @@ Example:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/docker-hub.git
+git clone https://github.com/fonteeboa/docker-build-library
 
 # Navigate to the desired directory (e.g., python)
-cd docker-hub/language/project
+cd docker-build-library/language/project
 
 # Build the Docker image
-docker build -t your-image-name .
+docker build -t image-name .
 
 # Run the Docker container
-docker run -it your-image-name
+docker run -it image-name
 ```
 
 ## License

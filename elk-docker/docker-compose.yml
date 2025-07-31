@@ -7,7 +7,7 @@ services:
     environment:
       - discovery.type=single-node
       - ES_JAVA_OPTS=-Xms1g -Xmx1g
-      - xpack.security.enabled=false   # Desabilita autenticação para DEV
+      - xpack.security.enabled=false
     ulimits:
       memlock:
         soft: -1
@@ -21,15 +21,15 @@ services:
       - elk
 
   kibana:
-    image: kibana-custom:8.13.4
+    image: docker.elastic.co/kibana/kibana:8.13.4
     container_name: kibana
     depends_on:
       - elasticsearch
     environment:
       - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
-      - SERVER_NAME=KibanaCustom
+      - SERVER_NAME=KibanaOfficial
     volumes:
-      - ./kibana/kibana.yml:/usr/share/kibana/config/kibana.yml
+      - ./kibana/kibana.yml:/usr/share/kibana/config/kibana.yml:ro
     ports:
       - "5601:5601"
     networks:

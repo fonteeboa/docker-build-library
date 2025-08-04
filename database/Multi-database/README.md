@@ -2,7 +2,7 @@
 
 This Docker Compose configuration allows you to run multiple databases simultaneously for development and testing environments. Supported databases include PostgreSQL, MySQL, MongoDB, Cassandra, Aurora, Spanner Emulator, and SQLite.
 
-## 📦 Supported Databases
+## Supported Databases
 
 - **PostgreSQL**
 - **MySQL**
@@ -14,14 +14,14 @@ This Docker Compose configuration allows you to run multiple databases simultane
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
-### 1️⃣ Prerequisites
+### Prerequisites
 
 - [Docker](https://www.docker.com/get-started) installed
 - [Docker Compose](https://docs.docker.com/compose/install/) installed
 
-### 2️⃣ Project Structure
+###  Project Structure
 
 ```bash
 project-root/
@@ -32,9 +32,9 @@ project-root/
 
 ---
 
-## ⚙️ Configuration (`docker-compose.yml`)
+## Configuration (`docker-compose.yml`)
 
-### 🔧 Activate Databases
+### Activate Databases
 
 You can start specific databases using:
 
@@ -62,15 +62,15 @@ Environment variables for database credentials are pre-configured with secure us
 
 ---
 
-## 🗂️ Usage Instructions
+## Usage Instructions
 
-### ✅ Start All Databases
+### Start All Databases
 
 ```bash
 docker-compose up
 ```
 
-### 🎯 Start Specific Databases
+### Start Specific Databases
 
 Specify the services you want to run:
 
@@ -78,31 +78,31 @@ Specify the services you want to run:
 docker-compose up postgres mysql
 ```
 
-### ⏹️ Stop All Databases
+### Stop All Databases
 
 ```bash
 docker-compose down
 ```
 
-### 🔄 Restart Services
+### Restart Services
 
 ```bash
 docker-compose restart
 ```
 
-### 📥 Pull Latest Images
+### Pull Latest Images
 
 ```bash
 docker-compose pull
 ```
 
-## 🛠️ Customization
+## Customization
 
 - **Change Ports:** Adjust the `ports` section for each service.
 - **Environment Variables:** Modify `POSTGRES_USER`, `MYSQL_PASSWORD`, `CASSANDRA_USER`, `AURORA_USER`, `SPANNER_USER`, etc., as needed.
 - **Volumes:** Data persistence is managed via Docker volumes (e.g., `postgres-data`, `mysql-data`, `aurora-data`).
 
-## 📝 Notes
+## Notes
 
 - **Spanner Emulator:** Requires the [Google Cloud SDK](https://cloud.google.com/sdk) if you plan to interact with Spanner in production.
 - **Aurora:** Uses MySQL-compatible drivers.

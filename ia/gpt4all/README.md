@@ -4,7 +4,7 @@ This project provides a Dockerized environment to **build and run [GPT4All](http
 
 The container setup is ideal for experimentation, local development, and exploring the capabilities of GPT4All without polluting your host system.
 
-## 🔧 Project Purpose
+## Project Purpose
 
 The goal of this container is to:
 
@@ -12,12 +12,12 @@ The goal of this container is to:
 * Provide a portable and isolated runtime
 * Facilitate local testing and learning with open-source LLMs
 
-## 📦 Repository
+## Repository
 
 You can find the Dockerfile and related setup scripts in this GitHub repository:
 👉 [github.com/fonteeboa/gpt4all-mark-one](https://github.com/fonteeboa/gpt4all-mark-one)
 
-## 📚 Documentation
+## Documentation
 
 For detailed usage, model compatibility, and architecture details, refer to the official GPT4All documentation:
 👉 [docs.gpt4all.io](https://docs.gpt4all.io)

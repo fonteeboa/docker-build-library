@@ -4,6 +4,6 @@ ENV TZ='America/Sao_Paulo' \
     FTLCONF_dns_listeningMode='all'
 
 RUN rm -rf /var/www/html/admin
-COPY . /va/www/html/admin/
+COPY . /var/www/html/admin/
 VOLUME ["/etc/pihole"]
 CMD ["/s6-init"]
